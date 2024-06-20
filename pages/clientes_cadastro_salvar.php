@@ -15,10 +15,32 @@
     $telefone=$_POST['telefone'];
     $data_cadastro=date("Y-m-d H:i:s");
     $data_atualizacao=date("Y-m-d H:i:s");
+    $foto= $_FILES["foto"];
     $status=0; 
 
-    $sql = "INSERT INTO clientes(nome, cpf, endereco, bairro, cidade, estado, cep, email, telefone, data_cadastro, data_atualizacao, status) 
-    VALUES ('$nome','$cpf','$endereco','$bairro', '$cidade', '$estado', '$cep', '$email', '$telefone', '$data_cadastro','$data_atualizacao','$status')"; 
+    $diretorio_destino = "../uploads/";
+
+    $nome_arquivo = uniqid() . '_' . basename($foto ["name"]);
+
+    $caminho_arquivo = $diretorio_destino . $nome_arquivo;
+
+    $extensoes_permitidas = array("jpg" , "jpeg" , "png");
+    $extensao= strtolower(pathinfo($nome_arquivo, PATHINFO_EXTENSION));
+     
+    if (!in_array($extensao, $extensoes_permitidas)){
+        echo "Somente arquivos JPG, JPEG, PNG são permitidas";
+        exit;
+    }
+
+    if(move_uploaded_file($foto ["tmp_name"], $caminho_arquivo)) {
+        echo"O arquivo foi enviado com sucesso";
+    }else{
+        echo "Erro ao enviar arquivo.";
+    }
+
+
+    $sql = "INSERT INTO clientes(nome, foto ,cpf, endereco, bairro, cidade, estado, cep, email, telefone, data_cadastro, data_atualizacao, status) 
+    VALUES ('$nome', '$nome_arquivo' ,'$cpf','$endereco','$bairro', '$cidade', '$estado', '$cep', '$email', '$telefone', '$data_cadastro','$data_atualizacao','$status')"; 
     
     if($conn->query($sql)==TRUE){
         echo "Cadastro realizado com sucesso!";

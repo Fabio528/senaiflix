@@ -10,11 +10,16 @@ $linha= $resultado->fetch_assoc();
 
 <h1>Atualizar registros</h1>
 
-<form method="post"  action="pages/clientes_edita_salvar.php?id=<?php echo $linha['id']?>" class="row g-3">
+<form method="post"  action="pages/clientes_edita_salvar.php?id=<?php echo $linha['id']?>" class="row g-3" enctype="multipart/form-data">
   <div class="col-md-6">
         <label for="nome" class="form-label">Nome</label>
         <input type="text" class="form-control" id="nome" name="nome" value="<?php echo $linha['nome']?>">
   </div>
+
+  <div class="form-group">
+        <label for="foto">Foto</label>
+        <input id="foto" type="file" name="foto" value="<?php echo $linha['foto']?>">
+    </div>
 
   <div class="input-box">
         <label for="cpf">CPF</label>

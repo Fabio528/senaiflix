@@ -1,5 +1,5 @@
 
-  <form method="post" action="pages/clientes_cadastro_salvar.php" class="row">
+  <form method="post" action="pages/clientes_cadastro_salvar.php" class="row" enctype="multipart/form-data">
 
     <div class="form-group">
           <label for="nome" class="form-label">Nome</label>
@@ -9,6 +9,11 @@
     <div class="form-group">
         <label for="cpf">CPF</label>
         <input id="cpf" type="text" name="cpf" placeholder="000.000.000-00">
+    </div>
+
+    <div class="form-group">
+        <label for="foto">Foto</label>
+        <input id="foto" type="file" name="foto" >
     </div>
 
     <div class="form-group">
@@ -52,3 +57,5 @@
 
 </form>
   <button type="submit" id="listar" class="btn btn-light"><a href="index.php?pagina=clientes_listar">Listar clientes</a></button>
+
+  

@@ -13,14 +13,9 @@ integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEw
     <tr>
         <th>ID</th>
         <th>Nome</th>
+        <th>Foto</th>
         <th>Cpf</th>
-        <th>Endereco </th>
-        <th>Bairro</th>
-        <th>Cidade</th>
-        <th>Estado</th>
         <th>Cep</th>
-        <th>Email</th>
-        <th>Telefone </th>
         <th>Data do cadastro</th>
         <th>Data de atualização</th>
         <th>Status</th>
@@ -34,14 +29,9 @@ integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEw
             echo"<tr>
                 <td>".$linha['id']."</td>
                 <td>".$linha['nome']."</td>
+                <td> <img src='uploads/".$linha['foto']."' heigth= '100px' width='100px'></td>
                 <td>".$linha['cpf']."</td>
-                <td>".$linha['endereco']."</td>
-                <td>".$linha['bairro']."</td>
-                <td>".$linha['cidade']."</td>
-                <td>".$linha['estado']."</td>
                 <td>".$linha['cep']."</td>
-                <td>".$linha['email']."</td>
-                <td>".$linha['telefone']."</td>
                 <td>".$linha['data_cadastro']."</td>
                 <td>".$linha['data_atualizacao']."</td>
                 <td>".$linha['status']."</td>

@@ -12,12 +12,12 @@
         <li><a href="index.php?pagina=clientes_listar" class="nav-link px-2">Clientes</a></li>
         <li><a href="index.php?pagina=filmes_listar" class="nav-link px-2">Filmes</a></li>
         <li><a href="index.php?pagina=assinaturas_listar" class="nav-link px-2">Assinaturas</a></li>
-        <li><a href="#" class="nav-link px-2">usuarios</a></li>
+        <li><a href="index.php?pagina=usuario_listar" class="nav-link px-2">usuarios</a></li>
       </ul>
 
       <div class="col-md-3 text-end">
         <button type="button" class="btn btn-outline-primary me-2"><a href="index.php?pagina=login">Login</button></a>
-        <button type="button" class="btn btn-primary">Sign-up</button>
+        <button type="button" class="btn btn-primary"><a href="index.php?pagina=sair">Sair</button></a>
       </div>
     </header>
   </div>

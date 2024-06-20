@@ -1,3 +1,15 @@
+<?php
+//Exemplo de verificação de autenticação
+session_start();
+
+
+// Verifica se o usuário está logado
+if (!isset($_SESSION['email'])) {
+    header('Location: pages/login.php');
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
